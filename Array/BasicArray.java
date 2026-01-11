@@ -55,6 +55,9 @@ public class BasicArray {
 
         int[] deleteFromIndex = ArrayOperationMethods.deleteFromIndex(arr1, 0);
         System.out.println("Element deleted from index : "+Arrays.toString(deleteFromIndex));
+
+        int[] deleteNewMethod = ArrayOperationMethods.deleteMethod(arr1, 3);
+        System.out.println("Delete Method new type : "+Arrays.toString(deleteNewMethod));
         
     }   
 

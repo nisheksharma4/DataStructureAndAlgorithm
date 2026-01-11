@@ -110,4 +110,19 @@ public class ArrayOperationMethods {
 
         return newArray;
     }
+
+    public static int[] deleteMethod(int[] arr, int index){
+
+        int[] newArray = new int[arr.length-1];
+
+        for(int i=0; i<index; i++){
+            newArray[i] = arr[i];
+        }
+
+        for(int i=index; i<newArray.length; i++){
+            newArray[i] = arr[i+1];
+        }
+
+        return newArray;
+    }
 }
