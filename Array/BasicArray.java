@@ -32,6 +32,8 @@ public class BasicArray {
         int[] arr1 = { 10, 20, 30, 40, 50 };
 
        System.out.println(arr1.length);
+       
+       //Insert Array Element
 
         int[] result = ArrayOperationMethods.insertAtAnyIndex(arr1, 2, 55);
         System.out.println("Array after inserting element at any Index : "+Arrays.toString(result)+"\n");
@@ -41,6 +43,18 @@ public class BasicArray {
         
         int[] inserAtEnd = ArrayOperationMethods.inserAtEnd(arr1, 99);
         System.out.println("Insert at end : "+Arrays.toString(inserAtEnd)+"\n");
+
+        // Delete Array Element
+        System.out.println("Before Deletion : "+Arrays.toString(arr1));
+
+        int[] deleteFromBeginning = ArrayOperationMethods.deleteFromBeginning(arr1);
+        System.out.println("Array after Delete From Beginning : "+Arrays.toString(deleteFromBeginning));
+
+        int[] deleteFromEnd = ArrayOperationMethods.deleteFromEnd(arr1);
+        System.out.println("Array after Deleting From End "+Arrays.toString(deleteFromEnd));
+
+        int[] deleteFromIndex = ArrayOperationMethods.deleteFromIndex(arr1, 0);
+        System.out.println("Element deleted from index : "+Arrays.toString(deleteFromIndex));
         
     }   
 

@@ -61,4 +61,53 @@ public class ArrayOperationMethods {
         arr1[index] = value;
         return arr1;
     }
+
+    //delete from beginning
+    public static int[] deleteFromBeginning(int[] arr){
+
+        //Creating new array with -1 size
+        int[] newArray = new int[arr.length - 1];
+        System.out.println("\nElement Deleted From Beginning : "+arr[0]);
+        //copying element of arr from 1 to end to new Array.
+        for(int i=1; i<arr.length; i++){
+            newArray[i-1] = arr[i];
+        }
+
+        return newArray;
+    }
+
+
+    public static int[] deleteFromEnd(int[] arr){
+
+        int[] newArray = new int[arr.length-1];
+
+        System.out.println("\nElement Deleted From End : "+arr[arr.length-1]);
+        //iterating upto New Array length
+        for(int i=0; i<newArray.length; i++){
+            newArray[i] = arr[i];
+        }
+
+        return newArray;
+    }
+
+    public static int[] deleteFromIndex(int[] arr, int index){
+
+        int[] newArray = new int[arr.length-1];
+
+        if(index == 0){
+            return deleteFromBeginning(arr);
+        }else if(index == arr.length-1){
+            return deleteFromEnd(arr);
+        }
+
+        for(int i=0; i<index; i++){
+            newArray[i] = arr[i];
+        }
+        System.out.println("Element Deleted from index : "+arr[index]);
+        for(int i=index+1; i<arr.length; i++){
+            newArray[i-1]=arr[i];
+        }
+
+        return newArray;
+    }
 }
