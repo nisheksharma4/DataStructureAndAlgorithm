@@ -18,12 +18,17 @@ public class BubbleSort {
         }
 
         for (int i = 0; i < merged.length - 1; i++) {
+            boolean swap = false;
             for (int j = 0; j < merged.length - i-1; j++) {
                 if (merged[j] > merged[j + 1]) {
                     int temp = merged[j];
                     merged[j] = merged[j + 1];
                     merged[j + 1] = temp;
+                    swap = true;
                 }
+            }
+            if(!swap){
+                break;
             }
         }
 
