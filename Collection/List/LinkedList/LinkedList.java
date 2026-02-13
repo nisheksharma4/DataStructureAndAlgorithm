@@ -82,12 +82,37 @@ public class LinkedList {
             temp = temp.next;
         }
 
-        if(temp == null){
+        if(temp.next == null){
             System.out.println("Data not found.");
             return;
         }
 
         temp.next = temp.next.next;
 
+    }
+
+    public void deleteByIndex(int index){
+        
+        if(index < 0){
+            System.out.println("Invalid index.");
+            return;
+        }
+        //store reference of first node in temp
+        Node temp = head;
+        //intital count
+        int i=0;
+        
+        while(i != index - 1 && temp.next != null){
+            temp = temp.next;
+            i++; // counter
+        }
+
+        if(temp.next == null){
+            System.out.println("Index out of Bound.");
+            return;
+        }
+        System.out.println("Removing Element : "+temp.next.data);
+        temp.next = temp.next.next;
+        
     }
 }

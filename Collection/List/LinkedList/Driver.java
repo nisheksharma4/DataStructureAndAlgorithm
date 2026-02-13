@@ -31,5 +31,11 @@ public class Driver {
 
         ls.delete(10);
         ls.traverse();
+
+        ls.deleteByIndex(2);
+        ls.traverse();
+
+        ls.deleteByIndex(99);
+        
     }
 }
