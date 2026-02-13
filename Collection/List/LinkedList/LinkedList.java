@@ -70,10 +70,12 @@ public class LinkedList {
 
         if(head == null){
             System.out.println("List is empty.");
+            return;
         }
 
         if(head.data == data){
             head = head.next;
+            return;
         }
 
         Node temp = head;
@@ -97,12 +99,23 @@ public class LinkedList {
             System.out.println("Invalid index.");
             return;
         }
+        //head is null
+        if(head == null){
+            System.out.println("List is Empty.");
+            return;
+        }
+
+        if(index == 0){
+            head = head.next;
+            return;
+        }
+        
         //store reference of first node in temp
         Node temp = head;
         //intital count
         int i=0;
         
-        while(i != index - 1 && temp.next != null){
+        while(i < index - 1 && temp.next != null){
             temp = temp.next;
             i++; // counter
         }
@@ -114,5 +127,36 @@ public class LinkedList {
         System.out.println("Removing Element : "+temp.next.data);
         temp.next = temp.next.next;
         
+    }
+
+    //size of an list
+    int size(){
+
+        int count = 0;
+        Node temp = head;
+
+        while(temp != null){
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+
+
+    //reverse a linked list
+
+    public void reverseList(){
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+
+        while(current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        head = prev;
     }
 }

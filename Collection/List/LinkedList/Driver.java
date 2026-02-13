@@ -35,7 +35,13 @@ public class Driver {
         ls.deleteByIndex(2);
         ls.traverse();
 
-        ls.deleteByIndex(99);
-        
+        //ls.deleteByIndex(99);
+
+        int size = ls.size();
+        System.out.println("Size of an List : "+size);
+
+        System.out.println("Reversed Array : ");
+        ls.reverseList();
+        ls.traverse();
     }
 }
